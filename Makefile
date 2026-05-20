@@ -29,7 +29,7 @@ all: libldacBT_dec.so
 
 libldacBT_dec.so: LDFLAGS += -shared -fpic -Wl,-soname,libldacBT_dec.so.1
 libldacBT_dec.so: CFLAGS += -fpic
-libldacBT_dec.so: libldacdec.o bit_allocation.o huffCodes.o bit_reader.o utility.o imdct.o spectrum.o
+libldacBT_dec.so: libldacdec.o bit_allocation.o huffCodes.o bit_reader.o utility.o imdct.o spectrum.o pipewire_compat.o
 
 mdct_imdct: LDLIBS += $(shell pkg-config sndfile --libs)
 #mdct_imdct: CFLAGS += -DSINGLE_PRECISION
